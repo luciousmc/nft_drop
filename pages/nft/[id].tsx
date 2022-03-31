@@ -18,6 +18,26 @@ function NFTDopPage() {
       </section>
 
       {/* Right Side */}
+      <section>
+        {/* Header */}
+        <header>
+          <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
+            The{' '}
+            <span className="font-extrabold underline decoration-pink-600/50">
+              LucioWeb
+            </span>{' '}
+            Market Place
+          </h1>
+
+          <button className="rounded-full bg-rose-400 px-4 py-2 text-xs font-bold text-white lg:px-5 lg:py-3 lg:text-base">
+            Sign In
+          </button>
+        </header>
+
+        {/* Content */}
+
+        {/* Button */}
+      </section>
     </main>
   );
 }
