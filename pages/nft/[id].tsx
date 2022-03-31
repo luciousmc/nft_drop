@@ -18,9 +18,8 @@ function NFTDopPage() {
       </section>
 
       {/* Right Side */}
-      <section>
-        {/* Header */}
-        <header>
+      <section className="flex flex-1 flex-col p-12 lg:col-span-6">
+        <header className="flex items-center justify-between">
           <h1 className="w-52 cursor-pointer text-xl font-extralight sm:w-80">
             The{' '}
             <span className="font-extrabold underline decoration-pink-600/50">
@@ -34,9 +33,27 @@ function NFTDopPage() {
           </button>
         </header>
 
+        <hr className="my-2 border" />
+
         {/* Content */}
+        <div className="lg:space-6-0 mt-10 flex flex-1 flex-col items-center space-y-6 text-center lg:justify-center">
+          <img
+            src="https://links.papareact.com/bdy"
+            alt="Ape Collage Image"
+            className="w-80 object-cover pb-10 lg:h-40"
+          />
+
+          <h1 className="text-3xl font-bold lg:text-5xl lg:font-extrabold">
+            PAPAFam Coding Club | NFT Drop
+          </h1>
+
+          <p className="pt-2 text-xl text-green-500">15 / 30 NFT's claimed</p>
+        </div>
 
         {/* Button */}
+        <button className="mt-10 h-16 w-full rounded-full bg-red-600 font-bold text-white">
+          Mint NFT (0.01 ETH)
+        </button>
       </section>
     </main>
   );
