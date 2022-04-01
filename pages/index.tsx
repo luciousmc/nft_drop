@@ -68,7 +68,7 @@ const Home: NextPage = () => {
           <NFTCard
             imgURL="/images/sailor-ape.jfif"
             title="Sailor Ape"
-            mintCount="1/6"
+            mintCount="1/4"
           />
         </div>
       </section>
