@@ -22,8 +22,10 @@ function NFTDopPage() {
             />
           </div>
           <div className="space-y-2 p-5 text-center">
-            <h1 className="text-4xl font-bold text-white">King of Apes</h1>
-            <h2 className="text-xl text-gray-300">A collection of apes</h2>
+            <h1 className="text-4xl font-bold text-white">
+              {title.replace('-', ' ').toUpperCase()}
+            </h1>
+            <h2 className="text-xl text-gray-300"></h2>
           </div>
         </div>
       </section>
