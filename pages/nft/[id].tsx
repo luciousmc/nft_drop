@@ -1,4 +1,15 @@
+import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react';
+import { useRouter } from 'next/router';
+
 function NFTDopPage() {
+  const connectWithMetaMask = useMetamask();
+  const address = useAddress();
+  const disconnect = useDisconnect();
+
+  const router = useRouter();
+
+  const { ext, title } = router.query;
+
   return (
     <main className="flex h-screen flex-col lg:grid lg:grid-cols-10">
       <section className="bg-gradient-to-br from-cyan-800 to-rose-500 lg:col-span-4">
@@ -6,12 +17,12 @@ function NFTDopPage() {
           <div className="rounded-xl bg-gradient-to-br from-yellow-400 to-purple-600 p-2">
             <img
               className="w-44 rounded-xl object-cover lg:h-96 lg:w-72"
-              src="https://links.papareact.com/8sg"
+              src={`/images/${title}.${ext}`}
               alt="Ape Image"
             />
           </div>
           <div className="space-y-2 p-5 text-center">
-            <h1 className="text-4xl font-bold text-white">Monahs Apes</h1>
+            <h1 className="text-4xl font-bold text-white">King of Apes</h1>
             <h2 className="text-xl text-gray-300">A collection of apes</h2>
           </div>
         </div>
@@ -28,12 +39,21 @@ function NFTDopPage() {
             Market Place
           </h1>
 
-          <button className="rounded-full bg-rose-400 px-4 py-2 text-xs font-bold text-white lg:px-5 lg:py-3 lg:text-base">
-            Sign In
+          <button
+            onClick={address ? disconnect : connectWithMetaMask}
+            className="rounded-full bg-rose-400 px-4 py-2 text-xs font-bold text-white lg:px-5 lg:py-3 lg:text-base"
+          >
+            {address ? 'Sign Out' : 'Sign In'}
           </button>
         </header>
 
         <hr className="my-2 border" />
+        {address && (
+          <p className="text-center text-sm text-rose-400">
+            Logged in as {address.substring(0, 5)}...
+            {address.substring(address.length - 5)}
+          </p>
+        )}
 
         {/* Content */}
         <div className="lg:space-6-0 mt-10 flex flex-1 flex-col items-center space-y-6 text-center lg:justify-center">
@@ -44,7 +64,7 @@ function NFTDopPage() {
           />
 
           <h1 className="text-3xl font-bold lg:text-5xl lg:font-extrabold">
-            PAPAFam Coding Club | NFT Drop
+            King of Apes Club | NFT Drop
           </h1>
 
           <p className="pt-2 text-xl text-green-500">15 / 30 NFT's claimed</p>
